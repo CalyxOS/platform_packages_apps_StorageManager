@@ -29,7 +29,8 @@ LOCAL_STATIC_ANDROID_LIBRARIES := \
       androidx.legacy_legacy-preference-v14 \
       androidx.appcompat_appcompat \
       androidx.preference_preference \
-      androidx.recyclerview_recyclerview
+      androidx.recyclerview_recyclerview \
+      android-support-v4
 
 LOCAL_USE_AAPT2 := true
 
