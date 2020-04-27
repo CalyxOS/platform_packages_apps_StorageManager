@@ -16,6 +16,7 @@
 -->
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.android.storagemanager">
 
     <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS"/>
@@ -37,7 +38,9 @@
         android:icon="@mipmap/ic_storage_manager_48px"
         android:theme="@style/StorageManager"
         android:allowBackup="false"
-        android:supportsRtl="true">
+        android:supportsRtl="true"
+        android:appComponentFactory="android.support.v4.app.CoreComponentFactory"
+        tools:replace="android:appComponentFactory">
         <uses-library android:name="org.apache.http.legacy" />
         <!--  Initial Page -->
         <activity android:name=".deletionhelper.DeletionHelperActivity"
