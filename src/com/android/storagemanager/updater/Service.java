@@ -100,7 +100,7 @@ public class Service extends IntentService {
                 monitor.countDown();
             }
         });
-        if (SystemProperties.getBoolean("sys.update.streaming_test", false)) {
+        if (SystemProperties.getBoolean("sys.update.streaming_test", true)) {
             Log.d(TAG, "streaming update test");
             final SharedPreferences preferences = Settings.getPreferences(this);
             final String downloadFile = preferences.getString(PREFERENCE_DOWNLOAD_FILE, null);
