@@ -17,7 +17,9 @@
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.android.storagemanager">
+    package="com.android.storagemanager"
+    android:versionCode="2901"
+    android:versionName="10.updater">
 
     <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS"/>
     <uses-permission android:name="android.permission.GET_PACKAGE_SIZE"/>
