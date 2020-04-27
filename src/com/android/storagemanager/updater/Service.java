@@ -42,8 +42,9 @@ public class Service extends IntentService {
     private static final String TAG = "Service";
     private static final int CONNECT_TIMEOUT = 60000;
     private static final int READ_TIMEOUT = 60000;
-    private static final File CARE_MAP_PATH = new File("/data/ota_package/care_map.txt");
-    static final File UPDATE_PATH = new File("/data/ota_package/update.zip");
+    private static final File BASE_PATH = new File("/storage/emulated/0/Android/data/com.android.storagemanager/cache");
+    private static final File CARE_MAP_PATH = new File(BASE_PATH, "care_map.txt");
+    static final File UPDATE_PATH = new File(BASE_PATH, "update.zip");
     private static final String PREFERENCE_DOWNLOAD_FILE = "download_file";
     private static final int HTTP_RANGE_NOT_SATISFIABLE = 416;
 
@@ -62,6 +63,7 @@ public class Service extends IntentService {
     public void onCreate() {
         super.onCreate();
         notificationHandler = new NotificationHandler(this);
+        this.getExternalCacheDirs(); // to create BASE_PATH
     }
 
     private URLConnection fetchData(final String path) throws IOException {
@@ -104,6 +106,7 @@ public class Service extends IntentService {
             Log.d(TAG, "streaming update test");
             final SharedPreferences preferences = Settings.getPreferences(this);
             final String downloadFile = preferences.getString(PREFERENCE_DOWNLOAD_FILE, null);
+            UPDATE_PATH.delete();
             engine.applyPayload(getString(R.string.url) + downloadFile, payloadOffset, 0, headerKeyValuePairs);
         } else {
             UPDATE_PATH.setReadable(true, false);
