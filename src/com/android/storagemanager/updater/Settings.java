@@ -107,15 +107,6 @@ public class Settings extends PreferenceActivity {
             }
             return true;
         });
-
-        final Preference idleReboot = findPreference(KEY_IDLE_REBOOT);
-        idleReboot.setOnPreferenceChangeListener((final Preference preference, final Object newValue) -> {
-            final boolean value = (Boolean) newValue;
-            if (!value) {
-                IdleReboot.cancel(this);
-            }
-            return true;
-        });
     }
 
     @Override

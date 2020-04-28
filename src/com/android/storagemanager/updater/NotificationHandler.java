@@ -65,7 +65,6 @@ public class NotificationHandler {
         channel.enableVibration(true);
         notificationManager.createNotificationChannel(channel);
         notificationManager.notify(NOTIFICATION_ID_REBOOT, new Notification.Builder(context, NOTIFICATION_CHANNEL_ID)
-                .addAction(R.drawable.ic_restart, rebootText, reboot)
                 .setContentIntent(getPendingChangelogIntent())
                 .setContentTitle(title)
                 .setContentText(text)
