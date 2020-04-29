@@ -134,6 +134,15 @@
             </intent-filter>
         </activity>
 
+        <activity-alias android:name=".updater.SettingsLink"
+                android:targetActivity=".updater.Settings"
+                android:label="@string/updater">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
         <provider
             android:name="android.support.v4.content.FileProvider"
             android:authorities="com.android.storagemanager.updater.fileprovider"
