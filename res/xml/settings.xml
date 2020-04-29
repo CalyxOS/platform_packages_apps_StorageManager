@@ -12,13 +12,6 @@
             android:title="@string/changelog_title"
             android:summary="@string/changelog_summary" />
 
-    <ListPreference android:key="channel"
-            android:title="@string/channel_title"
-            android:summary="%s"
-            android:entries="@array/channel_entries"
-            android:entryValues="@array/channel_values"
-            android:defaultValue="@string/channel_default" />
-
     <ListPreference android:key="network_type"
             android:persistent="false"
             android:title="@string/network_type_title"
