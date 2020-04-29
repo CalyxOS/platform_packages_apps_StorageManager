@@ -61,6 +61,10 @@ public class Settings extends PreferenceActivity {
         PreferenceManager.setDefaultValues(createDeviceProtectedStorageContext(), R.xml.settings, false);
         addPreferencesFromResource(R.xml.settings);
 
+        if (!getPreferences(this).getBoolean(KEY_WAITING_FOR_REBOOT, false)) {
+            PeriodicJob.schedule(this, true);
+        }
+
         final Preference checkForUpdates = findPreference(KEY_CHECK_FOR_UDPATES);
         checkForUpdates.setOnPreferenceClickListener((final Preference preference) -> {
             if (!getPreferences(this).getBoolean(KEY_WAITING_FOR_REBOOT, false)) {
