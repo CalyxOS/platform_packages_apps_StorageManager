@@ -26,7 +26,7 @@
     <string name="deletion_helper_app_summary_never_used" msgid="2695210890063792461">"Није коришћено у последњих годину дана"</string>
     <string name="deletion_helper_app_summary_unknown_used" msgid="8576377054665785558">"Није сигурно када је последњи пут коришћена"</string>
     <string name="deletion_helper_free_button" msgid="1760529213407548661">"Ослободите <xliff:g id="FREEABLE">%1$s</xliff:g>"</string>
-    <string name="deletion_helper_photos_title" msgid="2602723121486729972">"Резервне копије слика и видео снимака"</string>
+    <string name="deletion_helper_photos_title" msgid="2602723121486729972">"Резервне копије слика и видеа"</string>
     <string name="deletion_helper_photos_age_summary" msgid="1820871709448371984">"Старије од 30 дана"</string>
     <!-- no translation found for deletion_helper_photos_summary (3194825464552700889) -->
     <skip />
@@ -51,10 +51,10 @@
     <string name="automatic_storage_manager_service_label" msgid="648592272375278978">"Услуга аутоматског управљања меморијом"</string>
     <string name="automatic_storage_manager_notification_title" product="default" msgid="8480483265300964701">"Телефон има мало меморијског простора"</string>
     <string name="automatic_storage_manager_notification_title" product="tablet" msgid="3150907918531844467">"Таблет има мало меморијског простора"</string>
-    <string name="automatic_storage_manager_notification_summary" msgid="2267399886362245822">"Омогућите Менаџеру меморијског простора да ослобађа простор аутоматским уклањањем старих слика и видео снимака када се меморијски простор телефона значајно смањи."</string>
+    <string name="automatic_storage_manager_notification_summary" msgid="2267399886362245822">"Омогућите Менаџеру меморијског простора да ослобађа простор аутоматским уклањањем старих слика и видеа када се меморијски простор телефона значајно смањи."</string>
     <string name="automatic_storage_manager_cancel_button" msgid="1826365037494962803">"Не, хвала"</string>
     <string name="automatic_storage_manager_activate_button" msgid="6257070263061898041">"Укључи"</string>
-    <string name="deletion_helper_photos_loading_title" msgid="2768067991066779772">"Резервне копије слика и видео снимака"</string>
+    <string name="deletion_helper_photos_loading_title" msgid="2768067991066779772">"Резервне копије слика и видеа"</string>
     <string name="deletion_helper_photos_loading_summary" msgid="8203033249458245854">"Проналазе се ставке…"</string>
     <string name="deletion_helper_no_threshold" msgid="6943179204098250444">"Прикажи све ставке"</string>
     <string name="deletion_helper_default_threshold" msgid="8410389370069021113">"Сакриј недавне ставке"</string>
