@@ -17,7 +17,7 @@ android_robolectric_test {
         "robolectric_android-all-stub",
         //"Robolectric_all-target",
         //"mockito-robolectric-prebuilt",
-        "truth-prebuilt",
+        "truth",
     ],
 
     instrumentation_for: "StorageManager",

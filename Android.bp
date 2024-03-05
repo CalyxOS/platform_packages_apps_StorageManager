@@ -22,10 +22,6 @@ android_app {
     platform_apis: true,
     certificate: "platform",
 
-    optimize: {
-        proguard_flags_files: ["proguard.cfg"],
-    },
-
     system_ext_specific: true,
     privileged: true,
     required: ["privapp_whitelist_com.android.storagemanager"],
@@ -37,16 +33,13 @@ android_app {
         "androidx.recyclerview_recyclerview",
     ],
 
+    libs: ["keepanno-annotations"],
+
     uses_libs: ["org.apache.http.legacy"],
 
     resource_dirs: ["res"],
 
     srcs: ["src/**/*.java"],
-}
-
-filegroup {
-    name: "StorageManager_proguard_flags",
-    srcs: ["proguard.cfg"],
 }
 
 // The sources for StorageManager need to be exposed to StorageManagerGoogle.

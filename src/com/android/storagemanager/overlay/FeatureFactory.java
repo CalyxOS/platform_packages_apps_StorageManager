@@ -21,6 +21,9 @@ import android.text.TextUtils;
 import android.util.Log;
 
 import com.android.storagemanager.R;
+import com.android.tools.r8.keepanno.annotations.KeepItemKind;
+import com.android.tools.r8.keepanno.annotations.KeepTarget;
+import com.android.tools.r8.keepanno.annotations.UsesReflection;
 
 /**
  * Abstract class for creating feature controllers. Allows OEM implementations to define their own
@@ -36,9 +39,17 @@ public abstract class FeatureFactory {
 
     /**
      * Returns a factory for creating feature controllers. Creates the factory if it does not
-     * already exist. Uses the value of {@link R.string#config_featureFactory} to instantiate
-     * a factory implementation.
+     * already exist. Uses the value of {@link R.string#config_featureFactory} to instantiate a
+     * factory implementation.
      */
+    @UsesReflection(
+            description = "This method instantiates subclasses of FeatureFactory via reflection.",
+            value = {
+                @KeepTarget(
+                        kind = KeepItemKind.CLASS_AND_MEMBERS,
+                        extendsClassConstant = FeatureFactory.class,
+                        methodName = "<init>")
+            })
     public static FeatureFactory getFactory(Context context) {
         if (sFactory != null) {
             return sFactory;

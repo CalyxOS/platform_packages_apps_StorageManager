@@ -13,7 +13,7 @@ android_test {
         "androidx.test.espresso.core",
         "androidx.test.espresso.contrib-nodeps",
         "androidx.test.espresso.intents-nodeps",
-        "truth-prebuilt",
+        "truth",
     ],
 
     // Include all test java files.
