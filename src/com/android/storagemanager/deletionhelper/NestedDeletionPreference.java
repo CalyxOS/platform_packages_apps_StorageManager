@@ -35,8 +35,8 @@ public class NestedDeletionPreference extends CheckBoxPreference {
 
     public NestedDeletionPreference(Context context) {
         super(context);
-        setLayoutResource(com.android.storagemanager.R.layout.preference_nested);
-        setWidgetLayoutResource(com.android.storagemanager.R.layout.preference_widget_checkbox);
+        setLayoutResource(R.layout.preference_nested);
+        setWidgetLayoutResource(androidx.preference.R.layout.preference_widget_checkbox);
     }
 
     @Override

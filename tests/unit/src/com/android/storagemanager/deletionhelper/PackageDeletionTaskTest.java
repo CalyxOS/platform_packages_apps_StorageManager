@@ -16,18 +16,18 @@
 
 package com.android.storagemanager.deletionhelper;
 
-import android.test.AndroidTestCase;
 import android.content.pm.IPackageDeleteObserver;
 import android.content.pm.PackageManager;
 import android.os.RemoteException;
+import android.test.AndroidTestCase;
 import android.test.mock.MockPackageManager;
-import android.test.suitebuilder.annotation.SmallTest;
 
-import com.android.storagemanager.deletionhelper.PackageDeletionTask;
+import androidx.test.filters.SmallTest;
+
 import com.android.storagemanager.deletionhelper.PackageDeletionTask.Callback;
 
-import java.util.Set;
 import java.util.HashSet;
+import java.util.Set;
 
 public class PackageDeletionTaskTest extends AndroidTestCase {
     private FakePackageManager mPackageManager;

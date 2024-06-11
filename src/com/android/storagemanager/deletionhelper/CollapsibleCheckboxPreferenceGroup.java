@@ -56,7 +56,7 @@ public class CollapsibleCheckboxPreferenceGroup extends PreferenceGroup implemen
     public CollapsibleCheckboxPreferenceGroup(Context context, AttributeSet attrs) {
         super(context, attrs);
         setLayoutResource(R.layout.deletion_preference);
-        setWidgetLayoutResource(R.layout.preference_widget_checkbox);
+        setWidgetLayoutResource(androidx.preference.R.layout.preference_widget_checkbox);
     }
 
     @Override

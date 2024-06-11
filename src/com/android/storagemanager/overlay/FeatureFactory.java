@@ -47,7 +47,7 @@ public abstract class FeatureFactory {
             value = {
                 @KeepTarget(
                         kind = KeepItemKind.CLASS_AND_MEMBERS,
-                        extendsClassConstant = FeatureFactory.class,
+                        instanceOfClassConstantExclusive = FeatureFactory.class,
                         methodName = "<init>")
             })
     public static FeatureFactory getFactory(Context context) {
