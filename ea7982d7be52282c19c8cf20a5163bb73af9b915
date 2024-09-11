@@ -16,6 +16,24 @@
       "message": "Needs to be edited",
       "revId": "ea7982d7be52282c19c8cf20a5163bb73af9b915",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e7975539_b99a32f3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2024-09-11T12:26:52Z",
+      "side": 1,
+      "message": "TODO: See if it\u0027s actually needed anymore, for devices on 15.\n\nA lower version in a system app should be fine if it never actually got upgraded.\n\nThe original `aprilfix` issue only affected:\n\nblueline\nbonito\ncrosshatch\njasmine_sprout\nsargo\ntaimen\nwalleye\n\nNone of which will make it to 15, so we should be fine.",
+      "parentUuid": "1a3da166_0128177d",
+      "revId": "ea7982d7be52282c19c8cf20a5163bb73af9b915",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ]
 }
