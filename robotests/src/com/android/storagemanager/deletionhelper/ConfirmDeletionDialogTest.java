@@ -19,21 +19,22 @@ package com.android.storagemanager.deletionhelper;
 import static com.google.common.truth.Truth.assertThat;
 
 import android.R;
+import android.app.Activity;
+import android.app.Fragment;
 import android.widget.Button;
 import android.widget.TextView;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.robolectric.Robolectric;
 import org.robolectric.RobolectricTestRunner;
-
-import static org.robolectric.util.FragmentTestUtil.startFragment;
 
 @RunWith(RobolectricTestRunner.class)
 public class ConfirmDeletionDialogTest {
     @Test
     public void testOnCreateDialog_saysCorrectStrings() {
         final ConfirmDeletionDialog alertDialog = ConfirmDeletionDialog.newInstance(100L);
-        startFragment(alertDialog);
+        startVisibleFragment(alertDialog);
 
         TextView message = alertDialog.getDialog().findViewById(R.id.message);
         Button button1 = alertDialog.getDialog().findViewById(android.R.id.button1);
@@ -42,5 +43,14 @@ public class ConfirmDeletionDialogTest {
                 .isEqualTo("100 B of content will be removed from your device");
         assertThat(button1.getText().toString()).isEqualTo("Free up space");
         assertThat(button2.getText().toString()).isEqualTo("Cancel");
+    }
+
+    private static void startVisibleFragment(Fragment fragment) {
+        Activity activity = Robolectric.setupActivity(Activity.class);
+        activity
+            .getFragmentManager()
+            .beginTransaction()
+            .add(android.R.id.content, fragment, null)
+            .commitNow();
     }
 }

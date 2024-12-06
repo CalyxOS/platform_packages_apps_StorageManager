@@ -6,7 +6,7 @@ package {
 android_test {
     name: "StorageManagerAppTests",
 
-    libs: ["android.test.runner"],
+    libs: ["android.test.runner.stubs.system"],
 
     static_libs: [
         "androidx.test.rules",

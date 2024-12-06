@@ -16,11 +16,14 @@
 
 package com.android.storagemanager.deletionhelper;
 
+import android.app.Activity;
+import android.app.Fragment;
 import android.content.Context;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+import org.robolectric.Robolectric;
 import org.robolectric.RobolectricTestRunner;
 import org.robolectric.RuntimeEnvironment;
 
@@ -29,7 +32,6 @@ import java.util.concurrent.TimeUnit;
 import static android.content.DialogInterface.BUTTON_NEGATIVE;
 import static com.google.common.truth.Truth.assertThat;
 import static org.mockito.Mockito.when;
-import static org.robolectric.util.FragmentTestUtil.startFragment;
 
 @RunWith(RobolectricTestRunner.class)
 public class StorageManagerUpsellDialogTest {
@@ -45,28 +47,38 @@ public class StorageManagerUpsellDialogTest {
         assertThat(StorageManagerUpsellDialog.shouldShow(context, TimeUnit.DAYS.toMillis(90)))
                 .isTrue();
 
-        startFragment(fragment);
+        startVisibleFragment(fragment);
         fragment.onClick(null, BUTTON_NEGATIVE);
         when(mClock.currentTimeMillis()).thenReturn(TimeUnit.DAYS.toMillis(90 * 2));
         assertThat(StorageManagerUpsellDialog.shouldShow(context, TimeUnit.DAYS.toMillis(90 * 2)))
                 .isTrue();
 
-        startFragment(fragment);
+        startVisibleFragment(fragment);
         fragment.onClick(null, BUTTON_NEGATIVE);
         when(mClock.currentTimeMillis()).thenReturn(TimeUnit.DAYS.toMillis(90 * 3));
         assertThat(StorageManagerUpsellDialog.shouldShow(context, TimeUnit.DAYS.toMillis(90 * 3)))
                 .isTrue();
 
-        startFragment(fragment);
+        startVisibleFragment(fragment);
         fragment.onClick(null, BUTTON_NEGATIVE);
         when(mClock.currentTimeMillis()).thenReturn(TimeUnit.DAYS.toMillis(90 * 4));
         assertThat(StorageManagerUpsellDialog.shouldShow(context, TimeUnit.DAYS.toMillis(90 * 4)))
                 .isTrue();
 
-        startFragment(fragment);
+        startVisibleFragment(fragment);
         fragment.onClick(null, BUTTON_NEGATIVE);
         when(mClock.currentTimeMillis()).thenReturn(TimeUnit.DAYS.toMillis(90 * 5));
         assertThat(StorageManagerUpsellDialog.shouldShow(context, TimeUnit.DAYS.toMillis(90 * 5)))
                 .isFalse();
     }
+    
+    private static void startVisibleFragment(Fragment fragment) {
+        Activity activity = Robolectric.setupActivity(Activity.class);
+        activity
+            .getFragmentManager()
+            .beginTransaction()
+            .add(android.R.id.content, fragment, null)
+            .commitNow();
+    }
 }
+
